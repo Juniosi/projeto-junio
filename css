@@ -1,0 +1,170 @@
+/* Importando fonte Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaf6f6;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1rem; /* Adiciona espaçamento entre os itens */
+}
+
+.animal {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    width: 300px;
+    position: relative; /* Necessário para o posicionamento absoluto do conteúdo */
+    overflow: hidden; /* Oculta o conteúdo que sai da área do contêiner */
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 1rem; /* Adiciona margem ao redor de cada quadrado dos animais */
+}
+
+.animal:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.animal img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.img-galinha {
+    width: 80%; /* Diminui a largura da galinha para 80% do tamanho original */
+    max-width: 400px; /* Opcional: Limita a largura máxima */
+    margin: 0 auto; /* Centraliza a imagem dentro do contêiner */
+    display: block;
+}
+
+.animal h2 {
+    font-size: 1.8rem;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+.animal p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.animal ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.animal ul li {
+    background: #f4f4f4;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.animal ul li strong {
+    color: #4CAF50;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Estilos para ocultar e mostrar informações ao passar o mouse */
+.animal .info {
+    opacity: 0; /* Inicialmente escondido */
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    background: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    z-index: 10; /* Garante que o conteúdo fique acima da imagem */
+}
+
+.animal:hover .info {
+    opacity: 1; /* Exibe as informações quando o mouse passa por cima */
+}
+
+.animal:hover img {
+    opacity: 0.3; /* Torna a imagem mais transparente quando as informações são exibidas */
+}
+
+/* Estilos para as ovelhas fixas no fundo */
+@keyframes subir {
+    from {
+        transform: translateY(100px); /* Começa abaixo da tela */
+    }
+    to {
+        transform: translateY(0); /* Termina na posição final */
+    }
+}
+
+.ovelha-fundo {
+    position: fixed;
+    bottom: 0;
+    width: 150px;
+    height: auto;
+    z-index: 1; /* Garante que as ovelhas fiquem sobre o rodapé, mas abaixo do conteúdo principal */
+    opacity: 0.7; /* Ajusta a transparência para que não sobrecarregue o conteúdo */
+    animation: subir 2s ease-out forwards; /* Aplica a animação */
+}
+
+#ovelha-left {
+    left: 10px;
+    animation-delay: 0s; /* Começa a animação imediatamente */
+}
+
+#ovelha-right {
+    right: 10px;
+    animation-delay: 0.5s; /* Começa a animação um pouco depois da ovelha da esquerda */
+}
